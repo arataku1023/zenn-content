@@ -3,7 +3,7 @@ title: "Claude Codeでnote有料記事を6日で10本自動生成したら、売
 emoji: "🏭"
 type: "idea"
 topics: ["claudecode", "note", "自動化", "副業"]
-published: false
+published: true
 ---
 
 ## この記事は何か
