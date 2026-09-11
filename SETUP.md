@@ -2,7 +2,7 @@
 
 4 つとも 1 回だけ。以降はルーチンが下書きを自動で出す（公開は人が行う。README の公開ルール参照）。
 
-進捗（2026-09-12）: 1 GitHub ✅ / 2 Zenn 連携 ✅ / 3 Threads トークン ⬜ / 4 Claude Code: GitHub 連携 ✅・環境変数 ⬜
+進捗（2026-09-12）: 1 GitHub ✅ / 2 Zenn 連携 ✅ / 3 Threads トークン ✅（Meta アプリ zenn-threads-poster、テスター @takuyamaaaaaan）/ 4 Claude Code: GitHub 連携 ✅・環境変数 ✅ / テスト投稿 ✅ / ルーチン2本作成 ✅（README 参照）
 
 ## 1. GitHub にリポジトリを作って中身を上げる
 

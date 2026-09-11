@@ -6,10 +6,23 @@ Claude Code で note 記事量産を自動化した検証ログを Zenn に公�
 ## 構成
 
 ```
-articles/   Zenn 記事（Markdown）。push すると Zenn に反映される
+articles/   Zenn 記事（Markdown）。push すると Zenn に反映される（https://zenn.dev/banpeiyu）
 books/      Zenn 本（有料本を出す場合）
 scripts/    Threads 投稿・反応取得・トークン更新（Python 標準ライブラリのみ）
+logs/       ルーチンが書く投稿ログ（threads_posts.jsonl）と反応データ（threads_metrics.json）
+queue/      週次ルーチンが書く告知文（announce_NN.txt）。毎日ルーチンが公開検知後に使う
+config/     threads_token_issued_at.txt = Threads トークンの発行日（再発行したら書き換える）
 ```
+
+## ルーチン（claude.ai/code/routines）
+
+| ルーチン | 時刻 (JST) | やること |
+|---|---|---|
+| Zenn検証ログ｜Threads日次投稿 | 毎日 08:00 | 実数を集めて Threads に1本投稿し、logs/ を更新して push |
+| Zenn検証ログ｜週次記事下書き | 月曜 07:00 | 週の数字で検証ログ記事を `published: false` で書き、queue/ に告知文を置いて push |
+
+Threads アカウント: @takuyamaaaaaan / Meta アプリ: zenn-threads-poster（App ID 1088936270287604）。
+トークンは60日で失効。ルーチンが残日数を報告するので、警告が出たら Meta のトークン生成ツールで再生成し、環境変数と config/threads_token_issued_at.txt を更新する。
 
 ## 公開ルール（Zenn の AI コンテンツガイドライン対応）
 
