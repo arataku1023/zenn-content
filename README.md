@@ -11,6 +11,17 @@ books/      Zenn 本（有料本を出す場合）
 scripts/    Threads 投稿・反応取得・トークン更新（Python 標準ライブラリのみ）
 ```
 
+## 公開ルール（Zenn の AI コンテンツガイドライン対応）
+
+Zenn はボットによる自動投稿・著者検証なしの大量投稿を禁止している（違反はアカウント凍結対象）。
+そのため **ルーチンは `published: false` の下書きを push するだけ**にし、公開は必ず人が行う。
+
+1. ルーチンが `articles/*.md` を `published: false` で push する（週 1 本）
+2. 本人が内容を読み、事実と数字を確認する
+3. `published: true` に変えて push すると公開される
+
+Threads の告知投稿は Zenn の規約対象外なので、そちらは全自動でよい。
+
 ## Zenn 記事のフロントマター
 
 ```markdown
