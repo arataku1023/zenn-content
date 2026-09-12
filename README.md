@@ -1,7 +1,10 @@
 # zenn-content
 
-Claude Code で note 記事量産を自動化した検証ログを Zenn に公開し、Threads で告知するためのリポジトリ。
+Claude Code のクラウドルーチンでアフィリエイトブログ [kominka log](https://kominka-in.jp)（古民家・空き家・美容家電）の運用を自動化し、収益が出るかを検証するログを Zenn に公開し、Threads で告知するためのリポジトリ。
 クラウドの Claude Code ルーチンがこのリポジトリに記事を push し、`scripts/` で Threads に投稿する。
+
+題材の変遷: 2026-09-05〜11 は「note 有料記事の量産」を検証（10本で売上0、`articles/claude-code-note-factory-log-*.md` に記録）。2026-09-12 に題材をブログ運用に切り替え、新シリーズは `articles/claude-code-affiliate-log-NN.md`。
+ブログ運用の仕組み・ルール・状況はすべて別リポジトリ [arataku1023/kominka-ops](https://github.com/arataku1023/kominka-ops)（private）にあり、両ルーチンはそれを読み取り専用の source として持つ。Zenn 記事にはブログ本体へのリンクを入れ、アフィリエイトリンク（楽天・A8・もしも）は貼らない。
 
 ## 構成
 
@@ -18,8 +21,10 @@ config/     threads_token_issued_at.txt = Threads トークンの発行日（再
 
 | ルーチン | 時刻 (JST) | やること |
 |---|---|---|
-| Zenn検証ログ｜Threads日次投稿 | 毎日 08:00 | 実数を集めて Threads に1本投稿し、logs/ を更新して push |
-| Zenn検証ログ｜週次記事下書き | 月曜 07:00 | 週の数字で検証ログ記事を `published: false` で書き、queue/ に告知文を置いて push |
+| Zenn検証ログ｜Threads日次投稿 | 毎日 08:00 | kominka-ops の docs と Threads の反応から実数を集め、Threads に1本投稿（型 A〜F。F はブログ新記事の紹介、週2回まで）し、logs/ を更新して push |
+| Zenn検証ログ｜週次記事下書き | 月曜 07:00 | 週の数字（記事数・インデックス・GA4・楽天/A8 の実績）で検証ログ記事を `published: false` で書き、queue/ に告知文を置いて push |
+
+数字の出どころ: kominka-ops の `docs/status.md` `docs/ga_latest.md` `docs/decisions.md`、運用台帳 Artifact の `revenue`（楽天の週次実績、人が入力）、`logs/threads_metrics.json`。取れない数字は「未計測」と書く。
 
 Threads アカウント: @takuyamaaaaaan / Meta アプリ: zenn-threads-poster（App ID 1088936270287604）。
 トークンは60日で失効。ルーチンが残日数を報告するので、警告が出たら Meta のトークン生成ツールで再生成し、環境変数と config/threads_token_issued_at.txt を更新する。
@@ -39,10 +44,10 @@ Threads の告知投稿は Zenn の規約対象外なので、そちらは全自
 
 ```markdown
 ---
-title: "記事タイトル"
-emoji: "🛠"
-type: "tech"          # tech | idea
-topics: ["claudecode", "note", "自動化"]
+title: "記事タイトル（実数を1つ含む、40字以内）"
+emoji: "🏠"
+type: "idea"          # tech | idea
+topics: ["claudecode", "アフィリエイト", "自動化", "wordpress"]
 published: false      # true にした push で公開
 published_at: "2026-09-13 07:00"   # 任意。未来日時なら予約公開
 ---
