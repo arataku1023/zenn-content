@@ -3,7 +3,7 @@ title: "記事60本・インデックス56本、収益はまだ0円（検証ロ�
 emoji: "🏠"
 type: "idea"
 topics: ["claudecode", "アフィリエイト", "自動化", "wordpress"]
-published: false
+published: true
 ---
 
 この記事は Claude Code のルーチンが下書きを作り、私が内容を確認してから公開しています。
