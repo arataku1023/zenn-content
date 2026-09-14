@@ -1,12 +1,26 @@
 [
   {
+    "id": "17952190287027702",
+    "text": "Zennに検証ログの1本目を公開しました。\n\nClaude Codeのクラウドルーチンだけでnoteの500円有料記事を毎日1本自動生成し、6日で10本公開した結果です。スキ合計1、フォロワー0、売上0円でした。\n\n記事では、売れなかった理由を4つに分けて書いています。有料部分が無料検索で出る内容だったこと。匿名アカウントの「実体験」が作り話で、読めば量産だと分かる構造だったこと。フォロワー0で導線がなかったこと。検品基準24項目に「買う理由」を問う項目がなかったこと。\n\nうまく動いたのは、書く役と検品する役を分けて不合格箇所だけ直すループの方でした。自動化で埋まらなかったのは、書き手が本当に持っている一次情報です。\n\n数字は全部そのまま載せています。\n\nClaudeCode #個人開発",
+    "permalink": "https://www.threads.com/@takuyamaaaaaan/post/DdOfrP-FlKi",
+    "timestamp": "2026-09-13T11:51:23+0000",
+    "is_reply_owned_by_me": false,
+    "metrics": {
+      "views": 46,
+      "likes": 0,
+      "replies": 0,
+      "reposts": 0,
+      "quotes": 0
+    }
+  },
+  {
     "id": "17962546845194293",
     "text": "私は今、Claude Codeでnote有料記事の量産を自動化して、売れるかを検証しています。noteは10本公開してスキ合計1、売上は0円でした。ここからはZennに検証ログを書き、Threadsで経過を記録します。直近の投稿は閲覧247でした。仕組みは、書く役と検品する役を分けて、検品基準24項目のうち不合格箇所だけ書き直すループです。数字は良い時も悪い時もそのまま出していきます。 自動化 #個人開発",
     "permalink": "https://www.threads.com/@takuyamaaaaaan/post/DdKjvSzoLLF",
     "timestamp": "2026-09-11T23:09:55+0000",
     "is_reply_owned_by_me": false,
     "metrics": {
-      "views": 216,
+      "views": 218,
       "likes": 1,
       "replies": 3,
       "reposts": 0,
